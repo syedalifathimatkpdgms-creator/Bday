@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bestfriend ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#e9d5ff,#fdf4ff);
+overflow:hidden;
+}
+
+.page{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+text-align:center;
+}
+
+.active{
+display:flex;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+max-width:800px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+animation:slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+h1{
+color:#8b5cf6;
+margin-bottom:15px;
+font-size:32px;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+color:#333;
+}
+
+input{
+padding:12px;
+border-radius:10px;
+border:none;
+border:2px solid #8b5cf6;
+margin-top:10px;
+width:250px;
+font-size:16px;
+}
+
+button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+background:#8b5cf6;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+transition:all 0.3s ease;
+}
+
+button:hover{
+background:#7c3aed;
+transform:scale(1.05);
+}
+
+button:active{
+transform:scale(0.95);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+height:300px;
+object-fit:cover;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:transform 0.3s ease;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.next{
+margin-top:20px;
+}
+
+.birthday{
+font-size:55px;
+font-weight:bold;
+color:#7c3aed;
+animation:bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-20px);
+}
+}
+
+.small{
+margin-top:15px;
+font-size:20px;
+line-height:1.8;
+}
+
+audio{
+margin-top:20px;
+width:100%;
+max-width:400px;
+}
+
+@media (max-width: 600px) {
+.card {
+padding: 20px;
+}
+
+h1 {
+font-size: 24px;
+}
+
+p {
+font-size: 16px;
+}
+
+.birthday {
+font-size: 40px;
+}
+
+input {
+width: 200px;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="page active" id="login">
+<div class="card">
+<h1>🔐 Special Entry</h1>
+<p>Enter the password to unlock your birthday surprise ❤️</p>
+
+<input type="password" id="pass" placeholder="Enter Password">
+<br>
+<button onclick="checkPass()">Unlock</button>
+</div>
+</div>
+
+<!-- MESSAGE -->
+<div class="page" id="page1">
+<div class="card">
+<h1>To My Favourite Person 💜</h1>
+
+<p>
+You're my only special one, the person I always want beside me.
+Thank you for being my best friend, my comfort, my happiness,
+and one of the biggest reasons behind my smiles.
+<br><br>
+I never imagined someone could change my life in such a beautiful way.
+You've supported me, understood me, and stayed with me through everything.
+<br><br>
+No matter what happens, I never want to lose you.
+Thank you for every laugh, every memory, every conversation,
+and every moment you've given me.
+<br><br>
+You're truly irreplaceable and I'll always be lucky to have you in my life. ❤️
+</p>
+
+<button class="next" onclick="nextPage('page1','page2')">Next ➜</button>
+</div>
+</div>
+
+<!-- SONG -->
+<div class="page" id="page2">
+<div class="card">
+<h1>🎵 Our Song</h1>
+
+<p>
+Your Favorite Song
+</p>
+
+<p style="margin-top:15px;">
+Add your favorite song here 🎶
+</p>
+
+<audio controls>
+<source src="assets/song.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<br>
+<button class="next" onclick="nextPage('page2','page3')">Next ➜</button>
+</div>
+</div>
+
+<!-- BIRTHDAY -->
+<div class="page" id="page3">
+<div class="card">
+<div class="birthday">
+🎂 HAPPY BIRTHDAY BESTFRIENDEYYY 🎂
+</div>
+
+<p class="small">
+May your smile never fade.<br>
+May your dreams come true.<br>
+May success follow you everywhere.<br>
+Stay happy, stay blessed and stay exactly the wonderful person you are. 💜
+</p>
+
+<button class="next" onclick="nextPage('page3','page4')">See Memories ➜</button>
+</div>
+</div>
+
+<!-- GALLERY -->
+<div class="page" id="page4">
+<div class="card">
+<h1>✨ My Favourite Memories ✨</h1>
+
+<div class="gallery">
+<img src="assets/pic1.jpg" alt="Memory 1">
+<img src="assets/pic2.jpg" alt="Memory 2">
+<img src="assets/pic3.jpg" alt="Memory 3">
+</div>
+
+<p style="margin-top:20px;">
+No matter how many years pass,
+these memories and our friendship will always stay special. 💜
+</p>
+</div>
+</div>
+
+<script>
+function checkPass(){
+let pass=document.getElementById("pass").value;
+
+if(pass==="friend"){
+document.getElementById("login").classList.remove("active");
+document.getElementById("page1").classList.add("active");
+}
+else{
+alert("Wrong Password ❤️");
+}
+}
+
+function nextPage(current,next){
+document.getElementById(current).classList.remove("active");
+document.getElementById(next).classList.add("active");
+}
+</script>
+
+</body>
+</html>
